@@ -1,3 +1,4 @@
+package ap.DP;
 import java.util.Arrays;
 
 public class CLimbStairsDPTopDown {
@@ -17,7 +18,7 @@ public class CLimbStairsDPTopDown {
 
         if( n >= 2) {
             if(dp[n] != -1) {
-
+                // value exists, don't calculate
             } else{
                 if(dp[n-1] != -1 && dp[n-2] != -1) {
                     dp[n] = dp[n-1] + dp[n-2];

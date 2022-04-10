@@ -6,6 +6,7 @@ public class CoinChangeDP {
     public int minCoins(int[]coins, int target, int[]dp) {
 
         if(target == 0) return 0;
+        if(dp[target] != -1) return dp[target];
 
         int ans = Integer.MAX_VALUE;
 
@@ -13,12 +14,12 @@ public class CoinChangeDP {
 
             if(target - coins[i] >= 0){
                 int subAns = 0;
-                if(dp[target-coins[i]] != -1) {
-                    subAns = dp[target-coins[i]];
-                } else{
+                //if(dp[target-coins[i]] != -1) {
+                   // subAns = dp[target-coins[i]];
+               // } else{
                     subAns  = minCoins(coins, target-coins[i], dp);
                     //dp[target-coins[i]] = subAns;
-                }
+                //}
                 //ans = Math.min(subAns + 1, ans);
                 if(subAns != Integer.MAX_VALUE && subAns + 1 < ans) {
                     ans = subAns + 1;
